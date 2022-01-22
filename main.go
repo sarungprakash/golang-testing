@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 	"sort"
 	"strings"
@@ -54,11 +53,9 @@ func getWordCount(s []string, c int) map[string]int {
 	for key := range ct {
 		keys = append(keys, key)
 	}
-	fmt.Println("kkeys: ", keys)
 	sort.Slice(keys, func(i, j int) bool {
 		return ct[keys[i]] > ct[keys[j]]
 	})
-	fmt.Println("kkeys: ", keys)
 
 	res := make(map[string]int)
 	for _, key := range keys {
